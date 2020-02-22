@@ -15,12 +15,12 @@ export class HttpService {
     return this._http.get<Technology[]>(`${this.baseUrl}tecnologia`);
   }
 
-  getTecnologia(id: number) {
+  getTecnologia(id: string) {
     return this._http.get<Technology>(`${this.baseUrl}tecnologia/${id}`);
   }
 
   getSearchTechnology(query: string){
-    return this._http.get<Technology>(`${this.baseUrl}tecnologia/search/${query}`);
+    return this._http.get<Technology[]>(`${this.baseUrl}tecnologia/search/${query}`);
   }
 
 }
