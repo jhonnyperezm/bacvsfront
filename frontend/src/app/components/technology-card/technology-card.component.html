@@ -1,1 +1,17 @@
-<p>technology-card works!</p>
+<div class="card">
+  <img
+    class="card-img-top img-fluid"
+    [src]="technology.logo"
+    [alt]="technology.name"
+  />
+  <div class="card-body">
+    <h4 class="card-title">{{ technology.name }}</h4>
+    <p class="card-text">{{ technology.description }}</p>
+    <p class="card-text">
+      <small class="text-muted" *ngFor="let tag of technology.tags">
+        <a href="#">{{ tag }}</a>
+      </small>
+    </p>
+    <a [routerLink]="['/technologis', technology._id]" class="btn btn-outline-primary">See more...</a>
+  </div>
+</div>
